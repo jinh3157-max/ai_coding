@@ -26,6 +26,7 @@ def qytang_multicmd(ip, username, password, cmd_list, wait_time=2, verbose=True)
             print(output, end="")
     print("")
     ssh.close()
+    return result
 
 if __name__ == "__main__":
         

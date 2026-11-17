@@ -1,6 +1,10 @@
+# Database files
+*.db
+*.sqlite
+*.sqlite3
 # Python virtual environment
 .venv/
-
+.venv39/
 # Python cache
 __pycache__/
 *.pyc
@@ -10,5 +14,4 @@ __pycache__/
 
 # Cursor local settings
 .cursor/
-
 .vscode/
