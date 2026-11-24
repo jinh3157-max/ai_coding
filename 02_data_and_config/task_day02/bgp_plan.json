@@ -1,0 +1,67 @@
+[
+    {
+      "name": "C8Kv1",
+      "host": "10.1.1.1",
+      "local_as": 65001,
+      "router_id": "10.101.1.1",
+      "interfaces": [
+        {
+          "name": "GigabitEthernet3",
+          "address": "172.16.2.1",
+          "mask": "255.255.255.0",
+          "description": "EBGP-TO-C8Kv2"
+        },
+        {
+          "name": "Loopback100",
+          "address": "10.101.1.1",
+          "mask": "255.255.255.255",
+          "description": "BGP-PREFIX"
+        }
+      ],
+      "neighbors": [
+        {
+          "peer_ip": "172.16.2.2",
+          "remote_as": 65002
+        }
+      ],
+      "networks": [
+        {
+          "prefix": "10.101.1.1",
+          "mask": "255.255.255.255"
+        }
+      ]
+    },
+    {
+      "name": "C8Kv2",
+      "host": "10.1.1.2",
+      "local_as": 65002,
+      "router_id": "10.102.2.2",
+      "interfaces": [
+        {
+          "name": "GigabitEthernet3",
+          "address": "172.16.2.2",
+          "mask": "255.255.255.0",
+          "description": "EBGP-TO-C8Kv1"
+        },
+        {
+          "name": "Loopback100",
+          "address": "10.102.2.2",
+          "mask": "255.255.255.255",
+          "description": "BGP-PREFIX"
+        }
+      ],
+      "neighbors": [
+        {
+          "peer_ip": "172.16.2.1",
+          "remote_as": 65001
+        }
+      ],
+      "networks": [
+        {
+          "prefix": "10.102.2.2",
+          "mask": "255.255.255.255"
+        }
+      ]
+    }
+  ]
+  

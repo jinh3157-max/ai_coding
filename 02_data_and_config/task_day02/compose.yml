@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: aiops-postgres
+    environment:
+      POSTGRES_USER: aiops
+      POSTGRES_PASSWORD: aiops123
+      POSTGRES_DB: aiops
+    ports:
+      - "127.0.0.1:15435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
